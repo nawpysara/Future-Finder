@@ -87,6 +87,24 @@
         .sidebar-header p {
             font-family: "Newsreader", serif; font-size: 0.8rem; color: #AD9B79; margin-bottom: 5px;
         }
+
+          .sidebar-brand {
+            font-family: 'Tangerine', serif;
+            font-size: 2.5rem;
+            color: #5A8C48;
+            cursor: pointer;
+            margin-bottom: 15px;
+            transition: opacity 0.2s;
+            user-select: none;
+        }
+        .sidebar-brand:hover {
+            opacity: 0.8;
+        }
+
+        /* Menyesuaikan jarak header sidebar */
+        .sidebar-header {
+            margin-top: 5px;
+        }
         
         #map { flex-grow: 1; height: 100%; }   
         
@@ -179,8 +197,12 @@
 <!-- hlman utama -->
     <div id="app-container" style="display:none;">
         <div id="sidebar">
-            <button class="btn-toggle-sidebar" id="toggle-btn" onclick="toggleSidebar()">◀</button>
-       
+            <button class="btn-toggle-sidebar" id="toggle-btn" onclick="toggleSidebar()">◀️</button>
+
+            <div class="sidebar-brand" onclick="kembaliKeBeranda()">
+                Future Finder
+            </div>
+
             <div class="sidebar-header">
                 <h2>Daftar Sekolah</h2>
                 <p>Klik salah satu sekolah untuk melihat lokasi di peta.</p>
@@ -453,6 +475,14 @@
 
             muatMarker(hasilFilter);
             tampilkanDaftar(hasilFilter);
+        }
+           function kembaliKeBeranda() {
+            document.getElementById('app-container').style.display = 'none';
+            let landingPage = document.getElementById('landing-page');
+            landingPage.style.display = 'flex';
+            setTimeout(() => {
+                landingPage.style.opacity = '1';
+            }, 50);
         }
 
     </script>
