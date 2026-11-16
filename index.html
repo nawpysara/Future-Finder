@@ -90,10 +90,12 @@
 
           .sidebar-brand {
             font-family: 'Tangerine', serif;
-            font-size: 2.5rem;
+            font-size: 2rem;
             color: #5A8C48;
             cursor: pointer;
-            margin-bottom: 15px;
+            margin-bottom: 5px;
+            border-bottom: 2px solid #CFC4B2;
+            text-align: center;
             transition: opacity 0.2s;
             user-select: none;
         }
@@ -104,6 +106,7 @@
         /* Menyesuaikan jarak header sidebar */
         .sidebar-header {
             margin-top: 5px;
+            paadding-left: 8px;
         }
         
         #map { flex-grow: 1; height: 100%; }   
@@ -235,7 +238,7 @@
         const dataSekolah = [
             { nama: "SMAN 1 Kota Batu", jenjang: "SMA", status: "Negeri", alamat: "Jl. KH. Agus Salim No. 57, Sisir, Kec. Batu, Kota Batu, Jawa Timur.", lat: -7.8712, lng: 112.5273, akreditasi: "A", web: "https://sman1batu.sch.id", email: "sman1batu@yahoo.com", deskripsi: "Memiliki visi mewujudkan insan berakhlak mulia, berprestasi tinggi, berwawasan global, dan peduli lingkungan, sekolah rujukan ini unggul dengan tingkat kelulusan ke Perguruan Tinggi Negeri (PTN) tertinggi di Kota Batu, berpredikat Sekolah Adiwiyata Mandiri, memiliki fasilitas laboratorium serta perpustakaan digital yang lengkap, dan menyediakan pilihan peminatan Rumpun MIPA, IPS, serta Bahasa dan Budaya." },
             { nama: "SMAN 2 Kota Batu", jenjang: "SMA", status: "Negeri", alamat: "Jl. Hasanudin No. 01, Junrejo, Kec. Junrejo, Kota Batu, Jawa Timur.", lat: -7.8900, lng: 112.5200, akreditasi: "B", web: "https://sman2batu.sch.id", email: "smanduabatu@gmail.com", deskripsi: "Dengan visi unggul dalam prestasi, santun dalam pekerti, berbudaya lingkungan, dan kompetitif di era global, sekolah penggerak yang berlokasi di lingkungan asri kawasan Junrejo ini menonjol dalam bidang olahraga, seni budaya, riset ilmiah siswa, serta pembinaan karakter yang kuat dengan pilihan peminatan Rumpun MIPA, IPS, dan Bahasa." },
-            { nama: "SMAN 3 Kota Batu", jenjang: "SMA", statsu: "Negeri", alamat: "Jl. Joko Bundu No. 1, Desa Sumbergondo, Kec. Bumiaji, Kota Batu, Jawa Timur.", lat: -7.8344894, lng: 112.5300381, akreditasi: "A", web: "https://smanegeri3batu.sch.id/", email: "smanegeri3batu@gmail.com", deskripsi: "Bervisi mewujudkan generasi yang bertakwa, cerdas, terampil, mandiri, dan berwawasan lingkungan, sekolah yang terletak strategis di kawasan Bumiaji dengan suasana belajar kondusif ini unggul dalam pengembangan kewirausahaan siswa, kegiatan kepramukaan, penguatan literasi digital, serta menawarkan peminatan Rumpun MIPA dan IPS.Bervisi menjadi lembaga pendidikan Islam unggulan yang melahirkan pemimpin masa depan berakhlak Qur'ani dan berwawasan global, sekolah berasrama penuh (full boarding) berfasilitas modern ini unggul dalam pembinaan hafalan Al-Qur'an, penguasaan bahasa Arab dan Inggris, serta program akselerasi akademik menuju PTN maupun universitas luar negeri pada peminatan Rumpun MIPA dan IPS yang terintegrasi kurikulum keislaman." },
+            { nama: "SMAN 3 Kota Batu", jenjang: "SMA", status: "Negeri", alamat: "Jl. Joko Bundu No. 1, Desa Sumbergondo, Kec. Bumiaji, Kota Batu, Jawa Timur.", lat: -7.8344894, lng: 112.5300381, akreditasi: "A", web: "https://smanegeri3batu.sch.id/", email: "smanegeri3batu@gmail.com", deskripsi: "Bervisi mewujudkan generasi yang bertakwa, cerdas, terampil, mandiri, dan berwawasan lingkungan, sekolah yang terletak strategis di kawasan Bumiaji dengan suasana belajar kondusif ini unggul dalam pengembangan kewirausahaan siswa, kegiatan kepramukaan, penguatan literasi digital, serta menawarkan peminatan Rumpun MIPA dan IPS.Bervisi menjadi lembaga pendidikan Islam unggulan yang melahirkan pemimpin masa depan berakhlak Qur'ani dan berwawasan global, sekolah berasrama penuh (full boarding) berfasilitas modern ini unggul dalam pembinaan hafalan Al-Qur'an, penguasaan bahasa Arab dan Inggris, serta program akselerasi akademik menuju PTN maupun universitas luar negeri pada peminatan Rumpun MIPA dan IPS yang terintegrasi kurikulum keislaman." },
             { nama: "SMA Al Hikmah Boarding School Batu", jenjang: "SMA", status: "Swasta", alamat: " Jl. Raya Giripurno No. 145, Desa Giripurno, Kec. Bumiaji, Kota Batu", lat: -7.853366, lng: 112.561160, akreditasi: "A", web: "http://boarding.alhikmahsby.sch.id", email: "humas@boarding.alhikmahsby.sch.id", deskripsi: "Memiliki sistem pendidikan berasrama (boarding school) yang menggabungkan pendidikan akademik dengan pendidikan agama Islam." },
             { nama: "SMA Al Izzah Batu", jenjang: "SMA", status: "Swasta", alamat: "Jl. Indragiri, Gang Pangkur No. 78, Sumberejo, Kec. Batu, Kota Batu", lat: -7.858200, lng: 112.508200, akreditasi: "A", web: "http://smaalizzah-batu.sch.id", email: "info@smaalizzah-batu.sch.id", deskripsi: "Memiliki sistem pendidikan Islamic Boarding School dengan unit pendidikan putra dan putri terpisah." },
             { nama: "SMA Immanuel Batu", jenjang: "SMA", status: "Swasta", alamat: "Jl. Wukir No. 3, Sisir, Kec. Batu, Kota Batu", lat: -7.878922, lng: 112.535641, akreditasi: "A", web: "https://www.immanuel.sch.id/", email: "sma.immanuelbatu@gmail.com", deskripsi: "Sekolah swasta dengan latar belakang pendidikan Kristen yang memiliki jenjang pendidikan terpadu." },
